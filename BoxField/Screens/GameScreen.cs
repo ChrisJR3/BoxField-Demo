@@ -26,7 +26,7 @@ namespace BoxField
         List<Box> boxesRight = new List<Box>();
 
         int boxSize = 20;
-        int boxLeftX = 100;
+        public int boxLeftX = 100;
         int boxGap = 200;
         int boxXOffset = 5;
 
@@ -59,7 +59,7 @@ namespace BoxField
 
             newBoxCounter++;
 
-            hero = new Box(50, 300, 20);
+            hero = new Box(this.Width/2, this.Height - 40, 20);
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -147,6 +147,11 @@ namespace BoxField
             }
 
             Refresh();
+        }
+
+        private void GameScreen_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
